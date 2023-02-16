@@ -1,0 +1,23 @@
+<div class="text-center">
+
+    <h1 class="titulo"> <img src="../../../assets/images/Marvel_Logo.svg.png" alt="" width="300" height="100"> <strong>Comics</strong> </h1>
+
+</div>
+
+<div class="row row-cols-1 row-cols-md-3">
+
+    <div class="col mb-4" *ngFor="let comic of comics | async">
+
+        <div class="card h-100" >
+            <img src="{{comic.thumbnail.path}}.{{comic.thumbnail.extension}}">
+            <div class="card-body">
+                
+                <h5 class="card-title">{{comic.title}}</h5>         
+               
+            </div>
+        </div>
+
+
+    </div>
+
+</div>

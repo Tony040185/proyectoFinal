@@ -1,0 +1,22 @@
+<div class="text-center">
+    
+    <h1 class="titulo"> <img src="../../../assets/images/logo comics.png" width="300" height="100"> <strong>Character</strong> </h1>
+
+</div>
+
+<div>
+
+    <div class="text-center">
+        
+        <h2><strong>{{character.name | uppercase}}</strong></h2>
+
+        <img src="{{character.thumbnailPath}}.{{character.thumbnailExtension}}" class="img-fluid" alt="{{character.name}}"/>
+        
+        <p><strong>DESCRIPTION:</strong>{{character.description}}</p>
+        <br>
+        <a routerLink="/characters">Return</a>
+
+    </div>
+    
+
+</div>

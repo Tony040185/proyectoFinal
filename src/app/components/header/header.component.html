@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Marvel</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" aria-current="page" routerLink="/characters">Characters</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" *ngIf="auth.user$ | async as user" routerLink="/comics">Comics</a>
+        </li>
+        <form class="d-flex">
+
+          <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+
+            <button class="btn btn-outline-danger" (click)="auth.logout({})">
+
+              Log out
+
+            </button>
+
+          </ng-container>
+
+
+
+          <ng-template #loggedOut>
+
+            <button class="btn btn-outline-success" (click)="auth.loginWithRedirect()">Log in</button>
+
+          </ng-template>
+
+        </form>
+
+      </ul>
+    </div>
+  </div>
+</nav>

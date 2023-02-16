@@ -1,0 +1,24 @@
+<div class="text-center">
+
+    <h1 class="titulo"> <img src="../../../assets/images/Marvel_Logo.svg.png" alt="" width="300" height="100"> <strong>Characters</strong> </h1>
+
+</div>
+
+<div class="row row-cols-1 row-cols-md-3">
+
+    <div class="col mb-4" *ngFor="let character of characters | async">
+
+        <div class="card h-100" >
+            <img src="{{character.thumbnail.path}}.{{character.thumbnail.extension}}">
+            <div class="card-body">
+                <h5 class="card-title">{{character.name}}</h5>                
+                <button (click)="getCharacter(character.id)" *ngIf="auth.user$ | async as user" class="btn btn-primary" type="submit">Details</button>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
